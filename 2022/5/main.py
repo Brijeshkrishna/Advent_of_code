@@ -55,7 +55,25 @@ file_no = get_line(file_input)
 init = parse_stack(file_input, file_no - 1)
 data = parse_move(file_input[file_no:])
 
-move(init, data)
+
+def move_p2(inti,data):
+    for i in data:
+        s = inti[str(i[1])]
+        d = inti[str(i[2])]
+        
+        shift = s[len(s) - i[0]:] 
+        inti[str(i[2])] +=shift  
+        inti[str(i[1])]=s[:len(s) - i[0]]
+
+
+#move(init, data)
+#print(get_code(init))
+
+move_p2(init, data)
 print(get_code(init))
 
+
+
 # BZLVHBWQF
+# TDGJQTZSL
+
